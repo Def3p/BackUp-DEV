@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcdxvwg8x3l1x"]
+
+[ext_resource type="Script" path="res://script/bullet.gd" id="1_jpne0"]
+[ext_resource type="Texture2D" uid="uid://dwtdo3d5miavi" path="res://sprite/pulya_p.png" id="1_r1at3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3g72s"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mulbh"]
+size = Vector2(160, 16)
+
+[node name="bullet" type="Area2D"]
+script = ExtResource("1_jpne0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(48, 0)
+shape = SubResource("RectangleShape2D_3g72s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mulbh")
+
+[node name="PulyaP" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 8)
+texture = ExtResource("1_r1at3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1.43051e-06, 7.15256e-07)
+scale = Vector2(7.9, 0.7)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
