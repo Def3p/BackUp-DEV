@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cquc31ajyylhy"
-path="res://.godot/imported/vspishka1.png-7d0ace2fa380017015411b9559ffa2a9.ctex"
+uid="uid://cu15p5eeoxhs8"
+path="res://.godot/imported/idle.png-bd8a82814e4d3f5db167e8cc59eddc61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/vspishka1.png"
-dest_files=["res://.godot/imported/vspishka1.png-7d0ace2fa380017015411b9559ffa2a9.ctex"]
+source_file="res://game/player/idle.png"
+dest_files=["res://.godot/imported/idle.png-bd8a82814e4d3f5db167e8cc59eddc61.ctex"]
 
 [params]
 

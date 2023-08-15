@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nbskq31muggh"
-path="res://.godot/imported/idle-Sheet.png-46b3d6af6f10039d4c1edae114d12ec4.ctex"
+uid="uid://dgyvw6e3xb8wi"
+path="res://.godot/imported/turel-gun.png-da1622367dc52485d6110f49f37657ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/idle-Sheet.png"
-dest_files=["res://.godot/imported/idle-Sheet.png-46b3d6af6f10039d4c1edae114d12ec4.ctex"]
+source_file="res://game/additional objects/turret/turel-gun.png"
+dest_files=["res://.godot/imported/turel-gun.png-da1622367dc52485d6110f49f37657ed.ctex"]
 
 [params]
 

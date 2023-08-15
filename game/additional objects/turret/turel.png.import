@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7e7gpmqtukkp"
-path="res://.godot/imported/test_tileset2.png-9633a710938882f90ecc1187356ca0df.ctex"
+uid="uid://d2h131aa1ygyq"
+path="res://.godot/imported/turel.png-0f761d220f7c67b6aea247a53c76f9ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/test_tileset2.png"
-dest_files=["res://.godot/imported/test_tileset2.png-9633a710938882f90ecc1187356ca0df.ctex"]
+source_file="res://game/additional objects/turret/turel.png"
+dest_files=["res://.godot/imported/turel.png-0f761d220f7c67b6aea247a53c76f9ad.ctex"]
 
 [params]
 

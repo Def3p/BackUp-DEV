@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7kflw70jl3tt"
-path="res://.godot/imported/sprint_hd-Sheet_left.png-d154e1ce223e5d94708cfaadba2d3e51.ctex"
+uid="uid://cquc31ajyylhy"
+path="res://.godot/imported/vspishka1.png-4aa437a3f56b9b98ed82c8d26d381d0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/sprint_hd-Sheet_left.png"
-dest_files=["res://.godot/imported/sprint_hd-Sheet_left.png-d154e1ce223e5d94708cfaadba2d3e51.ctex"]
+source_file="res://game/additional objects/turret/vspishka1.png"
+dest_files=["res://.godot/imported/vspishka1.png-4aa437a3f56b9b98ed82c8d26d381d0b.ctex"]
 
 [params]
 

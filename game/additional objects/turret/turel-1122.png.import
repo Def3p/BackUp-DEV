@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jfvcv4io7fef"
-path="res://.godot/imported/magaz-Sheet.png-e077ba1af1344bddba369f2d50d8f7b5.ctex"
+uid="uid://byfpqkvjf34a7"
+path="res://.godot/imported/turel-1122.png-64690868aa8eb3e9575ed64c0007600b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/magaz-Sheet.png"
-dest_files=["res://.godot/imported/magaz-Sheet.png-e077ba1af1344bddba369f2d50d8f7b5.ctex"]
+source_file="res://game/additional objects/turret/turel-1122.png"
+dest_files=["res://.godot/imported/turel-1122.png-64690868aa8eb3e9575ed64c0007600b.ctex"]
 
 [params]
 

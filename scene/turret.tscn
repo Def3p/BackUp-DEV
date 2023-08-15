@@ -1,9 +1,29 @@
-[gd_scene load_steps=37 format=3 uid="uid://c6v8mfmq2qoh6"]
+[gd_scene load_steps=37 format=3 uid="uid://b78ig46tqv8ky"]
 
-[ext_resource type="Script" path="res://script/turel.gd" id="1_yjynn"]
-[ext_resource type="Texture2D" uid="uid://bcpt6hp0j4evw" path="res://sprite/turel-off-Sheet.png" id="2_hyxr4"]
-[ext_resource type="Texture2D" uid="uid://cqbqyrgwi3un3" path="res://sprite/turel-on-Sheet.png" id="3_0n3ei"]
-[ext_resource type="Texture2D" uid="uid://dgyvw6e3xb8wi" path="res://sprite/turel-gun.png" id="4_yobon"]
+[ext_resource type="Texture2D" uid="uid://bcpt6hp0j4evw" path="res://game/additional objects/turret/turel-off-Sheet.png" id="2_hyxr4"]
+[ext_resource type="Texture2D" uid="uid://cqbqyrgwi3un3" path="res://game/additional objects/turret/turel-on-Sheet.png" id="3_0n3ei"]
+[ext_resource type="Texture2D" uid="uid://dgyvw6e3xb8wi" path="res://game/additional objects/turret/turel-gun.png" id="4_yobon"]
+
+[sub_resource type="GDScript" id="GDScript_vgp8t"]
+script/source = "extends CharacterBody2D
+
+const BulletPath = preload(\"res://scene/bullet.tscn\")
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"shoot\"):
+		shoot()
+
+func shoot():
+	var bullet = BulletPath.instantiate()
+	
+	get_parent().add_child(bullet)
+	bullet.position = $rotair_tur/Marker2D.global_position
+	
+func _physics_process(delta):
+	pass
+		
+
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0ony"]
 atlas = ExtResource("2_hyxr4")
@@ -233,7 +253,7 @@ size = Vector2(22, 3)
 
 [node name="turret" type="CharacterBody2D"]
 position = Vector2(92, 109)
-script = ExtResource("1_yjynn")
+script = SubResource("GDScript_vgp8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false

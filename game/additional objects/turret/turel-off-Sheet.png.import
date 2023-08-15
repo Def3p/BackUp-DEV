@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu15p5eeoxhs8"
-path="res://.godot/imported/idle-Sheet_rd.png-c6db96dbba24eb853dd773891e0ba1b0.ctex"
+uid="uid://bcpt6hp0j4evw"
+path="res://.godot/imported/turel-off-Sheet.png-0f6c6a9bd5456ccc844f5aaffa496a8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/idle-Sheet_rd.png"
-dest_files=["res://.godot/imported/idle-Sheet_rd.png-c6db96dbba24eb853dd773891e0ba1b0.ctex"]
+source_file="res://game/additional objects/turret/turel-off-Sheet.png"
+dest_files=["res://.godot/imported/turel-off-Sheet.png-0f6c6a9bd5456ccc844f5aaffa496a8c.ctex"]
 
 [params]
 

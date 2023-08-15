@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjt6s0mgofy5e"]
 
-[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_b2jmd"]
+[ext_resource type="Script" path="res://game/additional objects/test_scene/shoot/test.gd" id="1_b2jmd"]
 [ext_resource type="Texture2D" uid="uid://gug52rsofr3k" path="res://icon.svg" id="2_nhilc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vt7c"]
