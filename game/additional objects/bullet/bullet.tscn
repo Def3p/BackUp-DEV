@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcdxvwg8x3l1x"]
+[gd_scene load_steps=10 format=3 uid="uid://dcdxvwg8x3l1x"]
 
-[ext_resource type="Texture2D" uid="uid://dwtdo3d5miavi" path="res://game/additional objects/bullet/pulya_p.png" id="1_a7ksp"]
+[ext_resource type="Texture2D" uid="uid://dwtdo3d5miavi" path="res://sprite/pulya_p.png" id="1_a7ksp"]
 [ext_resource type="Script" path="res://game/additional objects/bullet/bullet.gd" id="1_bp62i"]
 [ext_resource type="Script" path="res://game/additional objects/bullet/bullet_hitbox.gd" id="3_dttrc"]
+[ext_resource type="Texture2D" uid="uid://co2d3tel4e65e" path="res://atmosphere/light/Picsart_23-08-17_01-11-05-622.png" id="4_6r5hl"]
+[ext_resource type="Texture2D" uid="uid://dbfjrf2mgonn3" path="res://atmosphere/light/light.png" id="5_ehnmi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pkdq7"]
 size = Vector2(158, 14)
@@ -43,5 +45,21 @@ shape = SubResource("RectangleShape2D_w0po8")
 [node name="hitbox2" type="CollisionShape2D" parent="bullet_hitbox"]
 position = Vector2(128, 0)
 shape = SubResource("RectangleShape2D_tdse8")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(50, 0)
+rotation = -1.59591
+scale = Vector2(-1.12436, 1.58276)
+color = Color(0.917647, 0.509804, 0, 1)
+energy = 1.15
+texture = ExtResource("4_6r5hl")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(50, 0)
+rotation = -1.59591
+scale = Vector2(9.92553, -10.0848)
+color = Color(1, 0.411765, 0.364706, 1)
+energy = 0.43
+texture = ExtResource("5_ehnmi")
 
 [connection signal="body_entered" from="bullet_hitbox" to="bullet_hitbox" method="_on_body_entered"]
