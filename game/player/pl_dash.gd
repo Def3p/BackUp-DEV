@@ -41,9 +41,8 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 		# check for double jump
-		if can_double_jump and Input.is_action_pressed("space"):
+		if  Input.is_action_pressed("space"):
 			velocity.y = DOUBLE_JUMP_VELOCITY
-			can_double_jump = false
 	else:
 		can_double_jump = true
 	
