@@ -7,7 +7,7 @@
 [sub_resource type="GDScript" id="GDScript_vgp8t"]
 script/source = "extends CharacterBody2D
 
-const BulletPath = preload(\"res://scene/bullet.tscn\")
+const BulletPath = preload(\"res://game/additional objects/bullet/bullet.tscn\")
 
 func _process(delta):
 	if Input.is_action_just_pressed(\"shoot\"):
