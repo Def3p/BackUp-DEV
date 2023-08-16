@@ -6,11 +6,27 @@ var SPEED = 170.0
 var JUMP_VELOCITY = -250.0
 var fast_fell = false
 
+var right_left = true
+
+@onready var camera = $Camera2D
 @onready var anim_sprite = $AnimatedSprite2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("+"):
+		if camera.zoom[0] < 10 or camera.zoom[1] < 10:
+			camera.zoom[0] += 1
+			camera.zoom[1] += 1
+	if Input.is_action_just_pressed("-"):
+		if camera.zoom[0] != 0.5 or camera.zoom[1] != 0.5:
+			camera.zoom[0] -= 1
+			camera.zoom[1] -= 1
+	
+	if right_left:
+		anim_sprite.flip_h = true
+	else:
+		anim_sprite.flip_h = false
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -35,10 +51,10 @@ func _physics_process(delta):
 		anim_sprite.play("idle")
 	else:
 		if(velocity.x > 0):
-			anim_sprite.flip_h = true
+			right_left = false
 			anim_sprite.play("walk")
 		else:
-			anim_sprite.flip_h = false
+			right_left = true
 			anim_sprite.play("walk")
 
 	move_and_slide()

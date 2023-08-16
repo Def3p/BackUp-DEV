@@ -1,10 +1,7 @@
-extends Area2D
+extends CharacterBody2D
 
-var direction = Vector2(1, 0)
-var speed = 800
+var dir = Vector2(1, 0)
+var speed = 500
 
-func _process(delta):
-	translate(direction.normalized() * speed * delta)
-
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	queue_free()
+func _physics_process(delta):
+	var collision_info = move_and_collide(dir.normalized() * delta * speed)

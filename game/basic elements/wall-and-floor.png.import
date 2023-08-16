@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqgj2m5iwc8lj"
-path="res://.godot/imported/idle-Sheet.png-d5fa86edb83de416e835362eba51fb92.ctex"
+uid="uid://bqnrlclbn2qsu"
+path="res://.godot/imported/wall-and-floor.png-e43d546de899dc259d3d77f6ff1dbf0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/player/idle-Sheet.png"
-dest_files=["res://.godot/imported/idle-Sheet.png-d5fa86edb83de416e835362eba51fb92.ctex"]
+source_file="res://game/basic elements/wall-and-floor.png"
+dest_files=["res://.godot/imported/wall-and-floor.png-e43d546de899dc259d3d77f6ff1dbf0c.ctex"]
 
 [params]
 

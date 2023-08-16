@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var piz = $Node2D
 
-const BulletPath = preload("res://bullet.tscn")
+const BulletPath = preload('res://game/additional objects/bullet/bullet.tscn')
 
 func _process(delta):
 	

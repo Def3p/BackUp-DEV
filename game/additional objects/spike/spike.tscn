@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgrepnv62n2xr"]
 
 [ext_resource type="Script" path="res://game/additional objects/spike/spike.gd" id="1_5akmu"]
-[ext_resource type="Texture2D" uid="uid://c7e7gpmqtukkp" path="res://game/basic elements/test_tileset2.png" id="1_7crtb"]
+[ext_resource type="Texture2D" uid="uid://c7e7gpmqtukkp" path="res://game/basic elements/BG.png" id="1_7crtb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_766tq"]
 texture = ExtResource("1_7crtb")
