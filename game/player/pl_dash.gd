@@ -2,9 +2,14 @@ extends CharacterBody2D
 
 class_name Player
 
+
+
+
 var SPEED = 170.0
 var JUMP_VELOCITY = -250.0
+var DOUBLE_JUMP_VELOCITY = -200.0
 var fast_fell = false
+var can_double_jump = false
 
 var right_left = true
 
@@ -35,8 +40,16 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	if is_on_floor() and Input.is_action_pressed("space"):
-		velocity.y = JUMP_VELOCITY
+		# check for double jump
+		if can_double_jump and Input.is_action_pressed("space"):
+			velocity.y = DOUBLE_JUMP_VELOCITY
+			can_double_jump = false
+	else:
+		can_double_jump = true
+	
+		if Input.is_action_pressed("space"):
+			velocity.y = JUMP_VELOCITY
+			can_double_jump = false
 		
 	if not is_on_floor():
 		if velocity.y > 0 and not fast_fell:
@@ -62,6 +75,3 @@ func _physics_process(delta):
 			anim_sprite.play("walk")
 
 	move_and_slide()
-	
-	
-

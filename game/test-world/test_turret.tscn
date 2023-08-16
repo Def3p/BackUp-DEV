@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://ng4uueb36nl1"]
 
 [ext_resource type="Texture2D" uid="uid://bqnrlclbn2qsu" path="res://game/basic elements/wall-and-floor.png" id="1_1skl5"]
-[ext_resource type="Texture2D" uid="uid://c7e7gpmqtukkp" path="res://game/basic elements/BG.png" id="1_udh11"]
+[ext_resource type="Texture2D" uid="uid://c7e7gpmqtukkp" path="res://game/basic elements/test_tileset2.png" id="1_udh11"]
 [ext_resource type="PackedScene" uid="uid://dojatxfjpxoo5" path="res://game/player/player.tscn" id="2_47651"]
 [ext_resource type="Script" path="res://game/test-world/wall-floor-bg.gd" id="3_gvskj"]
 [ext_resource type="PackedScene" uid="uid://b78ig46tqv8ky" path="res://scene/turret.tscn" id="4_5unop"]
@@ -569,6 +569,8 @@ script = ExtResource("3_gvskj")
 [node name="player" parent="." instance=ExtResource("2_47651")]
 position = Vector2(655, 543)
 scale = Vector2(0.3, 0.3)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="player"]
 
 [node name="turret" parent="." instance=ExtResource("4_5unop")]
 position = Vector2(833, 436)
