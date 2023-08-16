@@ -13,7 +13,11 @@ var right_left = true
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+#func _ready():
+#	print(get_tree().get_nodes_in_group("Player")[0])
+
 func _physics_process(delta):
+	Global.add_pos(global_transform.origin)
 	if Input.is_action_just_pressed("+"):
 		if camera.zoom[0] < 10 or camera.zoom[1] < 10:
 			camera.zoom[0] += 1
