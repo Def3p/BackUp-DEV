@@ -1,15 +1,10 @@
-
 extends CharacterBody2D
 
 class_name Player
 
-var jump_count = 0
-var jump_max = 6
 var SPEED = 170.0
 var JUMP_VELOCITY = -250.0
-var DOUBLE_JUMP_VELOCITY = -200.0
 var fast_fell = false
-var jumps_remaining = 2  # Track the remaining jumps
 
 var right_left = true
 
@@ -18,9 +13,14 @@ var right_left = true
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+#func _ready():
+#	print(get_tree().get_nodes_in_group("Player")[0])
+
 func _physics_process(delta):
+	if Global.hp_input() < 1:
+		get_tree().reload_current_scene()
+		Global.regen(100)
 	Global.add_pos(global_transform.origin)
-	
 	if Input.is_action_just_pressed("+"):
 		if camera.zoom[0] < 10 or camera.zoom[1] < 10:
 			camera.zoom[0] += 1
@@ -37,39 +37,34 @@ func _physics_process(delta):
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
+
+	if is_on_floor() and Input.is_action_pressed("space"):
+		velocity.y = JUMP_VELOCITY
 		
-		if jumps_remaining > 0 and Input.is_action_pressed("space"):
-			velocity.y = DOUBLE_JUMP_VELOCITY
-			jumps_remaining -= 1
-			
-	if is_on_floor() and jump_count!=0:
-		jump_count = 0
-	if jump_count < jump_max:
-		jumps_remaining = 2
-		if Input.is_action_pressed("space"):
-			velocity.y = JUMP_VELOCITY
-			jump_count +=1
-		
+	if not is_on_floor():
 		if velocity.y > 0 and not fast_fell:
-			velocity.y += -100
+			velocity.y += 100
 			fast_fell = true
 	else:
 		fast_fell = false
-	
+		
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+		
 	if velocity.x == 0:
 		anim_sprite.play("idle")
 	else:
-		if velocity.x > 0:
+		if(velocity.x > 0):
 			right_left = false
 			anim_sprite.play("walk")
 		else:
 			right_left = true
 			anim_sprite.play("walk")
-	
+
 	move_and_slide()
+	
+	
+
