@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c7e7gpmqtukkp" path="res://game/basic elements/test_tileset2.png" id="1_udh11"]
 [ext_resource type="PackedScene" uid="uid://dojatxfjpxoo5" path="res://game/player/player.tscn" id="2_47651"]
 [ext_resource type="Script" path="res://game/test-world/wall-floor-bg.gd" id="3_gvskj"]
-[ext_resource type="PackedScene" uid="uid://b78ig46tqv8ky" path="res://game/additional objects/turret/turret.tscn" id="6_6thhv"]
+[ext_resource type="PackedScene" uid="uid://b78ig46tqv8ky" path="res://scene/turret.tscn" id="5_tgma6"]
 [ext_resource type="PackedScene" uid="uid://bgrepnv62n2xr" path="res://game/additional objects/spike/spike.tscn" id="6_d5puw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n5gaa"]
@@ -570,6 +570,9 @@ script = ExtResource("3_gvskj")
 position = Vector2(655, 543)
 scale = Vector2(0.26, 0.26)
 
+[node name="turret" parent="." instance=ExtResource("5_tgma6")]
+position = Vector2(840, 432)
+
 [node name="spikes" parent="." instance=ExtResource("6_d5puw")]
 position = Vector2(337, 544)
 
@@ -587,6 +590,3 @@ position = Vector2(481, 544)
 
 [node name="spikes6" parent="." instance=ExtResource("6_d5puw")]
 position = Vector2(497, 544)
-
-[node name="turret" parent="." instance=ExtResource("6_6thhv")]
-position = Vector2(829, 433)

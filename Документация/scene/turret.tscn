@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://beovgnxnwwgj4"]
+[gd_scene load_steps=37 format=3 uid="uid://b78ig46tqv8ky"]
 
 [ext_resource type="Texture2D" uid="uid://bcpt6hp0j4evw" path="res://game/additional objects/turret/turel-off-Sheet.png" id="2_hyxr4"]
 [ext_resource type="Texture2D" uid="uid://cqbqyrgwi3un3" path="res://game/additional objects/turret/turel-on-Sheet.png" id="3_0n3ei"]

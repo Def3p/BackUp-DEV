@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcdxvwg8x3l1x"]
+
+[ext_resource type="Texture2D" uid="uid://dwtdo3d5miavi" path="res://sprite/pulya_p.png" id="1_a7ksp"]
+[ext_resource type="Script" path="res://game/additional objects/bullet/bullet.gd" id="1_bp62i"]
+[ext_resource type="Script" path="res://game/additional objects/bullet/bullet_hitbox.gd" id="3_dttrc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0po8"]
+size = Vector2(166, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdse8"]
+size = Vector2(38, 54)
+
+[node name="bullet" type="CharacterBody2D"]
+scale = Vector2(0.06, 0.06)
+script = ExtResource("1_bp62i")
+
+[node name="PulyaP" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(80, 8)
+texture = ExtResource("1_a7ksp")
+
+[node name="bullet_hitbox" type="Area2D" parent="."]
+script = ExtResource("3_dttrc")
+
+[node name="hitbox1" type="CollisionShape2D" parent="bullet_hitbox"]
+position = Vector2(80, 5.96046e-08)
+shape = SubResource("RectangleShape2D_w0po8")
+
+[node name="hitbox2" type="CollisionShape2D" parent="bullet_hitbox"]
+position = Vector2(128, 0)
+shape = SubResource("RectangleShape2D_tdse8")
+
+[connection signal="body_entered" from="bullet_hitbox" to="bullet_hitbox" method="_on_body_entered"]
