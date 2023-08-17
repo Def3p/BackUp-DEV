@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjt6s0mgofy5e"]
+
+[ext_resource type="Script" path="res://game/additional objects/test_scene/shoot/test.gd" id="1_b2jmd"]
+[ext_resource type="Texture2D" uid="uid://gug52rsofr3k" path="res://icon.svg" id="2_nhilc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vt7c"]
+size = Vector2(96, 96)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(538, 359)
+script = ExtResource("1_b2jmd")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_nhilc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_1vt7c")
+
+[node name="Node2D" type="Node2D" parent="CharacterBody2D"]
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D/Node2D"]
+position = Vector2(97, 3)

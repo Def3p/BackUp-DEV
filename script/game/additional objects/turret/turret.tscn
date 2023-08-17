@@ -268,7 +268,6 @@ position = Vector2(92, 109)
 script = ExtResource("1_aycu7")
 
 [node name="on _ off" type="AnimatedSprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(0, 16)
 sprite_frames = SubResource("SpriteFrames_6v85l")
@@ -277,7 +276,6 @@ frame = 1
 frame_progress = 0.0999424
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_n67ly")
 debug_color = Color(1, 1, 1, 0.419608)

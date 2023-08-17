@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c30w4s4erg5qs"
-path="res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"
+uid="uid://3044po80tixm"
+path="res://.godot/imported/red_factory.png-f3ae348e9e2563b808606350f8f22faf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/additional objects/bochka/bochka111.png"
-dest_files=["res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"]
+source_file="res://atmosphere/parallax/red_factory.png"
+dest_files=["res://.godot/imported/red_factory.png-f3ae348e9e2563b808606350f8f22faf.ctex"]
 
 [params]
 

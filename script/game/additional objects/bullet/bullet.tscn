@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dcdxvwg8x3l1x"]
 
-[ext_resource type="Texture2D" uid="uid://dwtdo3d5miavi" path="res://sprite/pulya_p.png" id="1_a7ksp"]
+[ext_resource type="Texture2D" uid="uid://dwtdo3d5miavi" path="res://game/additional objects/bullet/pulya_p.png" id="1_a7ksp"]
 [ext_resource type="Script" path="res://game/additional objects/bullet/bullet.gd" id="1_bp62i"]
 [ext_resource type="Script" path="res://game/additional objects/bullet/bullet_hitbox.gd" id="3_dttrc"]
 

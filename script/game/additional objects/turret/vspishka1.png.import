@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c30w4s4erg5qs"
-path="res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"
+uid="uid://cquc31ajyylhy"
+path="res://.godot/imported/vspishka1.png-4aa437a3f56b9b98ed82c8d26d381d0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/additional objects/bochka/bochka111.png"
-dest_files=["res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"]
+source_file="res://game/additional objects/turret/vspishka1.png"
+dest_files=["res://.godot/imported/vspishka1.png-4aa437a3f56b9b98ed82c8d26d381d0b.ctex"]
 
 [params]
 

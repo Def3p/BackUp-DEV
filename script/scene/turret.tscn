@@ -1,9 +1,29 @@
-[gd_scene load_steps=44 format=3 uid="uid://b78ig46tqv8ky"]
+[gd_scene load_steps=37 format=3 uid="uid://b78ig46tqv8ky"]
 
-[ext_resource type="Script" path="res://game/additional objects/turret/turret.gd" id="1_aycu7"]
 [ext_resource type="Texture2D" uid="uid://bcpt6hp0j4evw" path="res://game/additional objects/turret/turel-off-Sheet.png" id="2_hyxr4"]
 [ext_resource type="Texture2D" uid="uid://cqbqyrgwi3un3" path="res://game/additional objects/turret/turel-on-Sheet.png" id="3_0n3ei"]
 [ext_resource type="Texture2D" uid="uid://dgyvw6e3xb8wi" path="res://game/additional objects/turret/turel-gun.png" id="4_yobon"]
+
+[sub_resource type="GDScript" id="GDScript_vgp8t"]
+script/source = "extends CharacterBody2D
+
+const BulletPath = preload(\"res://game/additional objects/bullet/bullet.tscn\")
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"shoot\"):
+		shoot()
+
+func shoot():
+	var bullet = BulletPath.instantiate()
+	
+	get_parent().add_child(bullet)
+	bullet.position = $rotair_tur/Marker2D.global_position
+	
+func _physics_process(delta):
+	pass
+		
+
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0ony"]
 atlas = ExtResource("2_hyxr4")
@@ -231,75 +251,25 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n67ly"]
 size = Vector2(22, 3)
 
-[sub_resource type="Gradient" id="Gradient_6andv"]
-colors = PackedColorArray(0.847059, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_q32cb"]
-gradient = SubResource("Gradient_6andv")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4o6im"]
-lifetime_randomness = 0.03
-particle_flag_disable_z = true
-spread = 7.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 5.0
-initial_velocity_max = 36.06
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-color = Color(0.984314, 1, 0, 0.533333)
-color_ramp = SubResource("GradientTexture1D_q32cb")
-hue_variation_min = 1.0
-hue_variation_max = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_brkve"]
-size = Vector2(19, 3)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dluii"]
-size = Vector2(5, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fls4m"]
-size = Vector2(15, 3)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mips2"]
-size = Vector2(6, 2)
-
-[node name="turret" type="Node2D"]
+[node name="turret" type="CharacterBody2D"]
 position = Vector2(92, 109)
-script = ExtResource("1_aycu7")
+script = SubResource("GDScript_vgp8t")
 
-[node name="on _ off" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 texture_filter = 1
 position = Vector2(0, 16)
 sprite_frames = SubResource("SpriteFrames_6v85l")
 animation = &"on"
-frame = 1
-frame_progress = 0.0999424
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_n67ly")
-debug_color = Color(1, 1, 1, 0.419608)
 
 [node name="rotair_tur" type="CharacterBody2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 3)
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="rotair_tur"]
-position = Vector2(23, 5)
-emitting = false
-amount = 100
-process_material = SubResource("ParticleProcessMaterial_4o6im")
-lifetime = 0.6
-one_shot = true
-speed_scale = 4.0
-explosiveness = 0.62
-randomness = 0.15
-
-[node name="RayCast2D" type="RayCast2D" parent="rotair_tur"]
-position = Vector2(23, 5)
-target_position = Vector2(250, 0)
+rotation = 0.837758
 
 [node name="Turel-gun" type="Sprite2D" parent="rotair_tur"]
 texture_filter = 1
@@ -308,32 +278,4 @@ texture = ExtResource("4_yobon")
 flip_h = true
 
 [node name="Marker2D" type="Marker2D" parent="rotair_tur"]
-position = Vector2(23, 5)
-
-[node name="turret_hitbox" type="Area2D" parent="rotair_tur"]
-
-[node name="gun_hitbox1" type="CollisionShape2D" parent="rotair_tur/turret_hitbox"]
-position = Vector2(7.5, 4.5)
-shape = SubResource("RectangleShape2D_brkve")
-debug_color = Color(1, 1, 1, 0.419608)
-
-[node name="gun_hitbox2" type="CollisionShape2D" parent="rotair_tur/turret_hitbox"]
-position = Vector2(5.5, 5.5)
-shape = SubResource("RectangleShape2D_dluii")
-debug_color = Color(1, 1, 1, 0.419608)
-
-[node name="gun_hitbox3" type="CollisionShape2D" parent="rotair_tur/turret_hitbox"]
-position = Vector2(4.5, 5.5)
-shape = SubResource("RectangleShape2D_fls4m")
-debug_color = Color(1, 1, 1, 0.419608)
-
-[node name="gun_hitbox4" type="CollisionShape2D" parent="rotair_tur/turret_hitbox"]
-position = Vector2(20, 5)
-shape = SubResource("RectangleShape2D_mips2")
-debug_color = Color(1, 1, 1, 0.419608)
-
-[node name="Timer" type="Timer" parent="rotair_tur"]
-wait_time = 0.2
-one_shot = true
-
-[connection signal="timeout" from="rotair_tur/Timer" to="." method="_on_timer_timeout"]
+position = Vector2(30, 5)

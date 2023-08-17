@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c30w4s4erg5qs"
-path="res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"
+uid="uid://c7e7gpmqtukkp"
+path="res://.godot/imported/test_tileset2.png-f20327beba87048a3b5cfef563ec0b06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/additional objects/bochka/bochka111.png"
-dest_files=["res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"]
+source_file="res://game/basic elements/test_tileset2.png"
+dest_files=["res://.godot/imported/test_tileset2.png-f20327beba87048a3b5cfef563ec0b06.ctex"]
 
 [params]
 

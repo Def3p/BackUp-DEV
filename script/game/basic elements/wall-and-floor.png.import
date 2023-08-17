@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c30w4s4erg5qs"
-path="res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"
+uid="uid://bqnrlclbn2qsu"
+path="res://.godot/imported/wall-and-floor.png-e43d546de899dc259d3d77f6ff1dbf0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/additional objects/bochka/bochka111.png"
-dest_files=["res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"]
+source_file="res://game/basic elements/wall-and-floor.png"
+dest_files=["res://.godot/imported/wall-and-floor.png-e43d546de899dc259d3d77f6ff1dbf0c.ctex"]
 
 [params]
 

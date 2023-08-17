@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c30w4s4erg5qs"
-path="res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"
+uid="uid://cqbqyrgwi3un3"
+path="res://.godot/imported/turel-on-Sheet.png-760af38a832e2cc715b706016888df5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/additional objects/bochka/bochka111.png"
-dest_files=["res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"]
+source_file="res://game/additional objects/turret/turel-on-Sheet.png"
+dest_files=["res://.godot/imported/turel-on-Sheet.png-760af38a832e2cc715b706016888df5e.ctex"]
 
 [params]
 

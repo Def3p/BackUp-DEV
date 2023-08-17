@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c30w4s4erg5qs"
-path="res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"
+uid="uid://dwtdo3d5miavi"
+path="res://.godot/imported/pulya_p.png-e168731a0aa49d50df2520e8e63a54da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/additional objects/bochka/bochka111.png"
-dest_files=["res://.godot/imported/bochka111.png-990baab071843b5cd7786edb2c0bcd97.ctex"]
+source_file="res://game/additional objects/bullet/pulya_p.png"
+dest_files=["res://.godot/imported/pulya_p.png-e168731a0aa49d50df2520e8e63a54da.ctex"]
 
 [params]
 
