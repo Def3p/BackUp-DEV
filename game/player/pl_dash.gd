@@ -3,8 +3,10 @@ extends CharacterBody2D
 
 class_name Player
 
+var dash_speed = 400.0
+
 var jump_count = 0
-var jump_max = 6
+var jump_max = 7
 var SPEED = 170.0
 var JUMP_VELOCITY = -250.0
 var DOUBLE_JUMP_VELOCITY = -200.0
@@ -21,6 +23,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 	Global.add_pos(global_transform.origin)
 	
+		
+		
 	if Input.is_action_just_pressed("+"):
 		if camera.zoom[0] < 10 or camera.zoom[1] < 10:
 			camera.zoom[0] += 1
@@ -57,11 +61,21 @@ func _physics_process(delta):
 		fast_fell = false
 	
 	var direction = Input.get_axis("left", "right")
-	if direction:
+	var dash_onoff =  Input.is_action_just_pressed("dash")
+		
+	if direction or dash_onoff:
 		velocity.x = direction * SPEED
+		if Input.is_action_just_pressed("dash"):
+			if right_left:
+				velocity.x = 1000 * -1
+			else:
+				velocity.x = 1000 * 1
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 	
+
+		
 	if velocity.x == 0:
 		anim_sprite.play("idle")
 	else:

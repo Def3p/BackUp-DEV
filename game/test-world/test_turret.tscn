@@ -1,17 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://ng4uueb36nl1"]
+[gd_scene load_steps=13 format=3 uid="uid://ng4uueb36nl1"]
 
 [ext_resource type="Texture2D" uid="uid://bqnrlclbn2qsu" path="res://game/basic elements/wall-and-floor.png" id="1_1skl5"]
 [ext_resource type="PackedScene" uid="uid://dojatxfjpxoo5" path="res://game/player/player.tscn" id="2_47651"]
-[ext_resource type="Texture2D" uid="uid://c7e7gpmqtukkp" path="res://game/basic elements/BG.png" id="3_24acw"]
+[ext_resource type="Texture2D" uid="uid://c7e7gpmqtukkp" path="res://game/basic elements/test_tileset2.png" id="3_24acw"]
 [ext_resource type="Script" path="res://game/test-world/wall-floor-bg.gd" id="3_gvskj"]
-[ext_resource type="Texture2D" uid="uid://c7e7gpmqtukkp" path="res://game/basic elements/test_tileset2.png" id="3_wkadi"]
 [ext_resource type="PackedScene" uid="uid://b78ig46tqv8ky" path="res://scene/turret.tscn" id="4_5unop"]
 [ext_resource type="PackedScene" uid="uid://bgrepnv62n2xr" path="res://game/additional objects/spike/spike.tscn" id="6_d5puw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n5gaa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xyycv"]
-texture = ExtResource("3_wkadi")
+texture = ExtResource("3_24acw")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -612,7 +611,7 @@ texture = ExtResource("1_1skl5")
 14:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 0.6875, 1.125, -8, 1.125)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_geo81"]
-texture = ExtResource("3_wkadi")
+texture = ExtResource("3_24acw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqjgw"]
 texture = ExtResource("3_24acw")

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c6y2yuql4f22c" path="res://atmosphere/parallax/back.png" id="7_5vh2m"]
 [ext_resource type="Texture2D" uid="uid://dbfjrf2mgonn3" path="res://atmosphere/light/light.png" id="7_dhewn"]
 [ext_resource type="Texture2D" uid="uid://tylekbd4vinr" path="res://atmosphere/parallax/middle.png" id="8_8f6ll"]
-[ext_resource type="PackedScene" uid="uid://b78ig46tqv8ky" path="res://game/additional objects/turret/turret.tscn" id="11_0ed6v"]
+[ext_resource type="PackedScene" uid="uid://b78ig46tqv8ky" path="res://scene/turret.tscn" id="11_0ed6v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyigb"]
 texture = ExtResource("6_b7yur")
