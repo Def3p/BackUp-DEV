@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b78ig46tqv8ky"]
+[gd_scene load_steps=44 format=3 uid="uid://b78ig46tqv8ky"]
 
 [ext_resource type="Script" path="res://game/additional objects/turret/turret.gd" id="1_aycu7"]
 [ext_resource type="Texture2D" uid="uid://bcpt6hp0j4evw" path="res://game/additional objects/turret/turel-off-Sheet.png" id="2_hyxr4"]
@@ -231,6 +231,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n67ly"]
 size = Vector2(22, 3)
 
+[sub_resource type="Gradient" id="Gradient_6andv"]
+colors = PackedColorArray(0.847059, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q32cb"]
+gradient = SubResource("Gradient_6andv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4o6im"]
+lifetime_randomness = 0.03
+particle_flag_disable_z = true
+spread = 7.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 36.06
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color = Color(0.984314, 1, 0, 0.533333)
+color_ramp = SubResource("GradientTexture1D_q32cb")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brkve"]
 size = Vector2(19, 3)
 
@@ -264,12 +284,20 @@ debug_color = Color(1, 1, 1, 0.419608)
 texture_filter = 1
 position = Vector2(0, 3)
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="rotair_tur"]
+position = Vector2(23, 5)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_4o6im")
+lifetime = 0.6
+one_shot = true
+speed_scale = 4.0
+explosiveness = 0.62
+randomness = 0.15
+
 [node name="RayCast2D" type="RayCast2D" parent="rotair_tur"]
 position = Vector2(23, 5)
 target_position = Vector2(250, 0)
-
-[node name="ReloadTimer" type="Timer" parent="rotair_tur/RayCast2D"]
-wait_time = 0.25
 
 [node name="Turel-gun" type="Sprite2D" parent="rotair_tur"]
 texture_filter = 1
@@ -302,5 +330,8 @@ position = Vector2(20, 5)
 shape = SubResource("RectangleShape2D_mips2")
 debug_color = Color(1, 1, 1, 0.419608)
 
-[connection signal="tree_entered" from="rotair_tur/RayCast2D" to="." method="_on_ray_cast_2d_tree_entered"]
-[connection signal="timeout" from="rotair_tur/RayCast2D/ReloadTimer" to="." method="_on_reload_timer_timeout"]
+[node name="Timer" type="Timer" parent="rotair_tur"]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="rotair_tur/Timer" to="." method="_on_timer_timeout"]

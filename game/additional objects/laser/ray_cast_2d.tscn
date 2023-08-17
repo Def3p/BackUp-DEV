@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhmfr7yt62nou"]
+
+[ext_resource type="Script" path="res://game/additional objects/laser/RayCast2D.gd" id="1_wcqqa"]
+
+[node name="RayCast2D" type="RayCast2D"]
+target_position = Vector2(250, 0)
+script = ExtResource("1_wcqqa")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 100, 0)
+default_color = Color(1, 0, 0, 0.643137)
