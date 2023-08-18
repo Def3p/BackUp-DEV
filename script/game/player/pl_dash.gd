@@ -2,14 +2,20 @@ extends CharacterBody2D
 
 class_name Player
 
-var SPEED = 170.0
-var JUMP_VELOCITY = -250.0
+var SPEED = 170
+var norm_SPEED = 170
+var dash_SPEED = 1500
+
 var fast_fell = false
+var JUMP_VELOCITY = -280.0
+var jump_add = 1
+var jump_count = 0
 
 var right_left = true
 
 @onready var camera = $Camera2D
 @onready var anim_sprite = $AnimatedSprite2D
+@onready var dash = $dash
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -37,9 +43,13 @@ func _physics_process(delta):
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
-	if is_on_floor() and Input.is_action_pressed("space"):
+	
+	if Input.is_action_just_pressed("space") and jump_count < jump_add:
 		velocity.y = JUMP_VELOCITY
+		jump_count += 1
+	
+	if is_on_floor():
+		jump_count = 0
 		
 	if not is_on_floor():
 		if velocity.y > 0 and not fast_fell:
@@ -63,8 +73,11 @@ func _physics_process(delta):
 		else:
 			right_left = true
 			anim_sprite.play("walk")
-
+	
+	if Input.is_action_just_pressed("shift"):
+		SPEED = dash_SPEED
+		dash.start()
 	move_and_slide()
 	
-	
-
+func _on_dash_timeout():
+	SPEED = norm_SPEED
