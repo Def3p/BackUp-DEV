@@ -1,30 +1,32 @@
-
 extends CharacterBody2D
 
 class_name Player
 
-var dash_speed = 400.0
+var SPEED = 170
+var norm_SPEED = 170
+var dash_SPEED = 1500
 
-var jump_count = 0
-var jump_max = 7
-var SPEED = 170.0
-var JUMP_VELOCITY = -250.0
-var DOUBLE_JUMP_VELOCITY = -200.0
 var fast_fell = false
-var jumps_remaining = 2  # Track the remaining jumps
+var JUMP_VELOCITY = -280.0
+var jump_add = 1
+var jump_count = 0
 
 var right_left = true
 
 @onready var camera = $Camera2D
 @onready var anim_sprite = $AnimatedSprite2D
+@onready var dash = $dash
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+#func _ready():
+#	print(get_tree().get_nodes_in_group("Player")[0])
+
 func _physics_process(delta):
+	if Global.hp_input() < 1:
+		get_tree().reload_current_scene()
+		Global.regen(100)
 	Global.add_pos(global_transform.origin)
-	
-		
-		
 	if Input.is_action_just_pressed("+"):
 		if camera.zoom[0] < 10 or camera.zoom[1] < 10:
 			camera.zoom[0] += 1
@@ -41,49 +43,41 @@ func _physics_process(delta):
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
-		if jumps_remaining > 0 and Input.is_action_pressed("space"):
-			velocity.y = DOUBLE_JUMP_VELOCITY
-			jumps_remaining -= 1
-			
-	if is_on_floor() and jump_count!=0:
+	
+	if Input.is_action_just_pressed("space") and jump_count < jump_add:
+		velocity.y = JUMP_VELOCITY
+		jump_count += 1
+	
+	if is_on_floor():
 		jump_count = 0
-	if jump_count < jump_max:
-		jumps_remaining = 2
-		if Input.is_action_pressed("space"):
-			velocity.y = JUMP_VELOCITY
-			jump_count +=1
 		
+	if not is_on_floor():
 		if velocity.y > 0 and not fast_fell:
-			velocity.y += -100
+			velocity.y += 100
 			fast_fell = true
 	else:
 		fast_fell = false
-	
-	var direction = Input.get_axis("left", "right")
-	var dash_onoff =  Input.is_action_just_pressed("dash")
 		
-	if direction or dash_onoff:
+	var direction = Input.get_axis("left", "right")
+	if direction:
 		velocity.x = direction * SPEED
-		if Input.is_action_just_pressed("dash"):
-			if right_left:
-				velocity.x = 1000 * -1
-			else:
-				velocity.x = 1000 * 1
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	
-
 		
 	if velocity.x == 0:
 		anim_sprite.play("idle")
 	else:
-		if velocity.x > 0:
+		if(velocity.x > 0):
 			right_left = false
 			anim_sprite.play("walk")
 		else:
 			right_left = true
 			anim_sprite.play("walk")
 	
+	if Input.is_action_just_pressed("shift"):
+		SPEED = dash_SPEED
+		dash.start()
 	move_and_slide()
+	
+func _on_dash_timeout():
+	SPEED = norm_SPEED

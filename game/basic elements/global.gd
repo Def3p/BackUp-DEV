@@ -3,6 +3,8 @@ extends Node
 @onready var pl_pos = null
 @onready var pl_hp = 100
 
+var kanal1_delete_tur = false
+
 func add_pos(pos):
 	pl_pos = pos
 	

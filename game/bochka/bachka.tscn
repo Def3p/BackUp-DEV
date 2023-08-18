@@ -14,10 +14,10 @@ visibility_layer = 7
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_layer = 4
 collision_mask = 7
+mass = 1000.0
 physics_material_override = SubResource("PhysicsMaterial_5nbx2")
 max_contacts_reported = 1
 contact_monitor = true
-sleeping = true
 freeze_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
@@ -26,6 +26,3 @@ texture = ExtResource("1_fppk8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_km8pm")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
-polygon = PackedVector2Array(-4, -6, -4, 8, 5, 8, 5, -6)
