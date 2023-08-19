@@ -10,7 +10,7 @@ var fast_fell = false
 var JUMP_VELOCITY = -280.0
 var jump_add = 1
 var jump_count = 0
-
+var push_force = 30.0
 var right_left = true
 
 @onready var camera = $Camera2D
@@ -78,6 +78,12 @@ func _physics_process(delta):
 		SPEED = dash_SPEED
 		dash.start()
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D: 
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+
 	
 func _on_dash_timeout():
 	SPEED = norm_SPEED

@@ -214,6 +214,8 @@ height = 14.0
 [node name="pl_ant" type="CharacterBody2D" parent="." groups=["Player"]]
 position = Vector2(0, -28)
 scale = Vector2(4, 4)
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_wp8a2")
 
 [node name="Camera2D" type="Camera2D" parent="pl_ant"]
