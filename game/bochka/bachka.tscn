@@ -1,11 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://drcyaebpmt80o"]
+[gd_scene load_steps=7 format=3 uid="uid://drcyaebpmt80o"]
 
+[ext_resource type="Script" path="res://game/bochka/boom.gd" id="1_4oqfw"]
 [ext_resource type="Texture2D" uid="uid://c30w4s4erg5qs" path="res://game/bochka/bochka111.png" id="1_fppk8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5nbx2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km8pm"]
 size = Vector2(9, 14)
+
+[sub_resource type="Curve" id="Curve_7ot6x"]
+_data = [Vector2(0.00634921, 1), 0.0, 0.0, 0, 0, Vector2(0.990476, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_1n7cv"]
+offsets = PackedFloat32Array(0, 0.514085, 1)
+colors = PackedColorArray(1, 0.796078, 0.262745, 1, 1, 0.392157, 0.145098, 1, 1, 0, 0.0862745, 1)
 
 [node name="Bachka" type="Node2D"]
 light_mask = 4
@@ -19,6 +28,7 @@ physics_material_override = SubResource("PhysicsMaterial_5nbx2")
 max_contacts_reported = 1
 contact_monitor = true
 freeze_mode = 1
+script = ExtResource("1_4oqfw")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture = ExtResource("1_fppk8")
@@ -26,3 +36,25 @@ texture = ExtResource("1_fppk8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_km8pm")
+
+[node name="Timer" type="Timer" parent="RigidBody2D"]
+wait_time = 5.0
+
+[node name="Timer2" type="Timer" parent="RigidBody2D"]
+wait_time = 10.297
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="RigidBody2D"]
+light_mask = 7
+amount = 293
+explosiveness = 1.0
+randomness = 0.5
+lifetime_randomness = 0.5
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 196.97
+scale_amount_min = 2.7
+scale_amount_max = 6.35
+scale_amount_curve = SubResource("Curve_7ot6x")
+color = Color(1, 0.796078, 0.262745, 1)
+color_ramp = SubResource("Gradient_1n7cv")
